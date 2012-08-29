@@ -125,7 +125,7 @@ Tool {
 
     public void readSolrDocument(SolrDocument doc) {
       id = (String)doc.getFieldValue(SolrConstants.ID_FIELD);
-      boost = (Float)doc.getFieldValue(SolrConstants.BOOST_FIELD);
+      boost = Float.parseFloat(doc.getFieldValue(SolrConstants.BOOST_FIELD).toString());
 
       Date buffer = (Date)doc.getFieldValue(SolrConstants.TIMESTAMP_FIELD);
       tstamp = buffer.getTime();

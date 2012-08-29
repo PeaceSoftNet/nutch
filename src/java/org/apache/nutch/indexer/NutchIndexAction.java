@@ -28,7 +28,7 @@ import org.apache.nutch.indexer.NutchDocument;
  * A {@link NutchIndexAction} is the new unit of indexing holding the
  * document and action information.
  */
-class NutchIndexAction implements Writable {
+public class NutchIndexAction implements Writable {
 
   public static final byte ADD = 0;
   public static final byte DELETE = 1;

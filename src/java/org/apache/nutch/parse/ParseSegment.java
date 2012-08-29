@@ -96,7 +96,7 @@ public class ParseSegment extends Configured implements Tool,
     try {
       parseResult = new ParseUtil(getConf()).parse(content);
     } catch (Exception e) {
-      LOG.warn("Error parsing: " + key + ": " + StringUtils.stringifyException(e));
+      LOG.warn("Error parsing: " + key + ": " + StringUtils.stringifyException(e), e);
       return;
     }
 
