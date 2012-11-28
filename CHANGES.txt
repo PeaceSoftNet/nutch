@@ -1,6 +1,42 @@
 Nutch Change Log
 
-(trunk) Current Development:
+(trunk): Current Development
+
+Release 1.6 - 23/11/2012
+
+* NUTCH-1370 Expose exact number of urls injected @runtime (snagel via lewismc)
+
+* NUTCH-1117 JUnit test for index-anchor (lewismc)
+
+* NUTCH-1451 Upgrade automaton jar to 1.11-8 (lewismc)
+
+* NUTCH-1488 bin/nutch to run junit from any directory (snagel via lewismc)
+
+* NUTCH-1493 Error adding field 'contentLength'='' during solrindex using index-more (Nathan Gass via lewismc)
+
+* NUTCH-1491 Strip UTF-8 non-character codepoints in title (Nathan Gass via markus)
+
+* NUTCH-1421 RegexURLNormalizer to only skip rules with invalid patterns (snagel)
+
+* NUTCH-1341 NotModified time set to now but page not modified (markus)
+
+* NUTCH-1215 UpdateDB should not require segment as input (markus)
+
+* NUTCH-1383 IndexingFiltersChecker to show error message instead of null pointer exception (snagel)
+
+* NUTCH-1476 SegmentReader getStats should set parsed = -1 if no parsing took place (snagel)
+
+* NUTCH-1252 SegmentReader -get shows wrong data (snagel)
+
+* NUTCH-1344 BasicURLNormalizer to normalize https same as http (snagel)
+
+* NUTCH-706 Url regex normalizer: pattern for session id removal not to match "newsId" (Meghna Kukreja via snagel)
+
+* NUTCH-1415 release packages to contain top level folder apache-nutch-x.x (snagel)
+
+* NUTCH-1441 AnchorIndexingFilter should use plain HashSet (ferdy via lewismc)
+
+* NUTCH-1470 Ensure test files are included for runtime testing (lewismc)
 
 * NUTCH-1434 Indexer to delete robots noindex (markus)
 
