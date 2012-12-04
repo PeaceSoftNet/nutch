@@ -386,15 +386,8 @@ public class SegmentReader extends Configured implements
     Writable value = (Writable)valueClass.newInstance();
     // we don't know the partitioning schema
     for (int i = 0; i < readers.length; i++) {
-      if (readers[i].get(key, value) != null) {
+      if (readers[i].get(key, value) != null)
         res.add(value);
-        value = (Writable)valueClass.newInstance();
-        Text aKey = (Text) keyClass.newInstance();
-        while (readers[i].next(aKey, value) && aKey.equals(key)) {
-          res.add(value);
-          value = (Writable)valueClass.newInstance();
-        }
-      }
       readers[i].close();
     }
     return res;
@@ -411,10 +404,8 @@ public class SegmentReader extends Configured implements
     Writable value = (Writable)valueClass.newInstance();
     for (int i = 0; i < readers.length; i++) {
       while (readers[i].next(aKey, value)) {
-        if (aKey.equals(key)) {
+        if (aKey.equals(key))
           res.add(value);
-          value = (Writable)valueClass.newInstance();
-        }
       }
       readers[i].close();
     }
@@ -488,7 +479,7 @@ public class SegmentReader extends Configured implements
       stats.fetched = cnt;
     }
     Path parseDir = new Path(segment, ParseData.DIR_NAME);
-    if (fs.exists(parseDir) && fs.getFileStatus(parseDir).isDir()) {
+    if (fs.exists(fetchDir) && fs.getFileStatus(fetchDir).isDir()) {
       cnt = 0L;
       long errors = 0L;
       ParseData value = new ParseData();

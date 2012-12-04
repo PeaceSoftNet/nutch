@@ -124,6 +124,7 @@ public class CrawlDb extends Configured implements Tool {
     JobConf job = new NutchJob(config);
     job.setJobName("crawldb " + crawlDb);
 
+
     Path current = new Path(crawlDb, CURRENT_NAME);
     if (FileSystem.get(job).exists(current)) {
       FileInputFormat.addInputPath(job, current);
@@ -168,7 +169,7 @@ public class CrawlDb extends Configured implements Tool {
   }
 
   public int run(String[] args) throws Exception {
-    if (args.length < 1) {
+    if (args.length < 2) {
       System.err.println("Usage: CrawlDb <crawldb> (-dir <segments> | <seg1> <seg2> ...) [-force] [-normalize] [-filter] [-noAdditions]");
       System.err.println("\tcrawldb\tCrawlDb to update");
       System.err.println("\t-dir segments\tparent directory containing all segments to update from");

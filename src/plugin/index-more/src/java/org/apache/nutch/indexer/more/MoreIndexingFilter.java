@@ -168,12 +168,10 @@ public class MoreIndexingFilter implements IndexingFilter {
   private NutchDocument addLength(NutchDocument doc, ParseData data, String url) {
     String contentLength = data.getMeta(Response.CONTENT_LENGTH);
 
-    if (contentLength != null) {
+    if (contentLength != null)
       // NUTCH-1010 ContentLength not trimmed
-      String trimmed = contentLength.toString().trim();
-      if (!trimmed.isEmpty())
-        doc.add("contentLength", trimmed);
-    }
+      doc.add("contentLength", contentLength.trim());
+
     return doc;
   }
 
